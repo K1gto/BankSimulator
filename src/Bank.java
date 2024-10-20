@@ -2,8 +2,8 @@ import java.util.concurrent.Semaphore;
 import java.util.concurrent.TimeUnit;
 
 class Customer implements Runnable {
-    private String name;
-    private Bank bank;
+    private final String name;
+    private final Bank bank;
 
     public Customer(String name, Bank bank) {
         this.name = name;
@@ -37,7 +37,7 @@ class Customer implements Runnable {
 }
 
 class Bank {
-    private Semaphore atms;
+    private final Semaphore atms;
     private boolean open;
 
     public Bank(int numATMs) {
